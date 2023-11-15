@@ -14,7 +14,7 @@
         state: present
 
     - name: Set timezone non-interactively
-      command: echo "TZ=Your/Timezone" > /etc/environment && dpkg-reconfigure -f noninteractive tzdata
+      command: echo "export TZ=Your/Timezone" > /etc/profile && source /etc/profile && dpkg-reconfigure -f noninteractive tzdata
 
     - name: Install Docker and tzdata non-interactively
       apt:
