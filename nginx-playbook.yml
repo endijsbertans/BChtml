@@ -22,10 +22,11 @@
     - name: Set timezone non-interactively
       command: echo "{{ TZ }}" > /etc/timezone && dpkg-reconfigure -f noninteractive tzdata
 
-    - name: Start Nginx container
+    - name: Start Nginx container on EC2 instance
       docker_container:
         name: my-nginx-container
         image: nginx:latest
         ports:
           - "80:80"
         restart_policy: always
+        api_version: auto
