@@ -1,2 +1,2 @@
-[web_servers]
-localhost ansible_connection=7777
+[localhost]
+localhost ansible_connection=local ansible_port=7777
